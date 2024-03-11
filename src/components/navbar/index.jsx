@@ -4,9 +4,23 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import PlaylistFrom from '../playlist-form';
 
 const Navbar = () => {
 
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const getPlaylistId = (playlistId) => {
+        console.log(playlistId);
+    }
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -21,9 +35,10 @@ const Navbar = () => {
                                 Stack Learner
                             </Typography>
                         </Stack>
-                        <Button variant='contained'>
+                        <Button variant='contained' onClick={handleClickOpen}>
                             Add Playlist
                         </Button>
+                        <PlaylistFrom open={open} handleClose={handleClose} getPlaylistId={getPlaylistId} />
                     </Toolbar>
                 </Container>
             </AppBar>
