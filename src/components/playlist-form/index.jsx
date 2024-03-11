@@ -13,16 +13,15 @@ const PlaylistFrom = ({ open, handleClose, getPlaylistId }) => {
 
     const handleSubmit = () => {
         // todo handle url latter
-        if (!state) {
-            // { <Alert severity="error">Invalid Playlist</Alert> }
-            alert('invalid')
-        } else {
+        if (!state) return
+        else {
             getPlaylistId(state)
             setState('')
             handleClose()
         }
 
     }
+
     return (
         <Dialog
             open={open}
@@ -36,7 +35,6 @@ const PlaylistFrom = ({ open, handleClose, getPlaylistId }) => {
                 </DialogContentText>
                 <TextField
                     autoFocus
-                    required
                     margin="dense"
                     label="Playlist Id or Link"
                     fullWidth
