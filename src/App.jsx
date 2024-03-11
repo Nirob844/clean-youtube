@@ -1,21 +1,15 @@
-import { useEffect } from "react";
-import usePlaylists from "./hooks/usePlaylists";
-
-
+import CssBaseline from '@mui/material/CssBaseline';
+import Navbar from './components/navbar';
 
 const App = () => {
 
-  const { getPlaylistById, playlists } = usePlaylists()
-
-  useEffect(() => {
-    getPlaylistById('PL_XxuZqN0xVDr08QgQHljCecWtA4jBLnS')
-  }, []);
-
-  console.log(playlists);
   return (
-    <div>
-      <h1>Clean Youtube</h1>
-    </div>
+    <>
+      <CssBaseline />
+      <div>
+        <Navbar />
+      </div>
+    </>
   );
 };
 
