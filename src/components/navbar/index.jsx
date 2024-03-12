@@ -1,9 +1,10 @@
-import { Button, Container, Stack } from '@mui/material';
+import { Button, Container, Link, Stack } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import usePlaylists from '../../hooks/usePlaylists';
 import PlaylistFrom from '../playlist-form';
 
@@ -30,12 +31,11 @@ const Navbar = () => {
                 <Container maxWidth={'lg'}>
                     <Toolbar>
                         <Stack sx={{ flexGrow: 1 }}>
-                            <Typography variant="h4">
-                                Clean Youtube
-                            </Typography>
-                            <Typography variant="body1" >
-                                Stack Learner
-                            </Typography>
+                            <Link component={RouterLink} to='/' sx={{ textDecoration: 'none', color: "black" }}>
+                                <Typography variant="h4">
+                                    Clean Youtube
+                                </Typography>
+                            </Link>
                         </Stack>
                         <Button variant='contained' onClick={handleClickOpen}>
                             Add Playlist

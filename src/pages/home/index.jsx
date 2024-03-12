@@ -16,7 +16,8 @@ const HomePage = () => {
                         {playlistArray.map((item) => (
                             <Grid item xs={12} md={6} lg={4} mb={2}>
                                 <PlaylistCardItem
-                                    key={item.id}
+                                    key={item.playlistID}
+                                    playlistId={item.playlistID}
                                     playlistThumbnail={item.playlistThumbnail}
                                     playlistTitle={item.playlistTitle}
                                     channelTitle={item.channelTitle}

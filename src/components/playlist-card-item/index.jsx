@@ -7,9 +7,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 
-const PlaylistCardItem = ({ playlistThumbnail, playlistTitle, channelTitle, }) => {
+const PlaylistCardItem = ({ playlistThumbnail, playlistTitle, channelTitle, playlistId }) => {
 
     return (
         <Card sx={{
@@ -35,7 +36,7 @@ const PlaylistCardItem = ({ playlistThumbnail, playlistTitle, channelTitle, }) =
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
-                <Button>
+                <Button to={`/player/${playlistId}`} component={Link}>
                     <Stack direction={'row'} spacing={1} alignItems={'center'}>
                         <PlayCircleFilledOutlinedIcon />
                         <Typography variant='body2' fontWeight={600}>Start Tutorial</Typography>
