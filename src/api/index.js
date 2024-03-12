@@ -8,7 +8,7 @@ const getPlaylistItem = async (playlistID, pageToken = "", result = []) => {
   const { data } = await axios.get(URL);
   result = [...result, ...data.items];
   if (data.nextPageToken) {
-    result = getPlaylist(playlistID, data.nextPageToken, result);
+    result = getPlaylistItem(playlistID, data.nextPageToken, result);
   }
   return result;
 };

@@ -4,10 +4,12 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import usePlaylists from '../../hooks/usePlaylists';
 import PlaylistFrom from '../playlist-form';
 
-const Navbar = ({ getPlaylistById }) => {
+const Navbar = () => {
 
+    const { getPlaylistById } = usePlaylists()
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
